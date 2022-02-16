@@ -1,3 +1,6 @@
+
+# fileopener
+
 from dis import Instruction
 from tkinter import *
 import cv2 as cv
@@ -28,7 +31,7 @@ def setup():
         safe_file.write("")
     
     print("hi")
-    print(name)
+    print(name)                                                                                                                                                                                                                                                                     
     
     
     setuprun = True
@@ -44,6 +47,7 @@ def safe_read():
     global path
     global exe
     global setuprun
+    print(setuprun)
     
     if setuprun == False:
         name = enter.get()
