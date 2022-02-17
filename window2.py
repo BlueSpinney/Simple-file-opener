@@ -25,7 +25,8 @@ def setup():
     
     with open('safe.txt', 'r') as safe_file:
         name = safe_file.read()
-        name = name[name.find("s/") + 3:name.find("\e")]
+        print(name)
+        name = name[name.find("s/") + 2:name.find("/e")]
         
     with open('safe.txt', 'w') as safe_file:
         safe_file.write("")
@@ -57,8 +58,8 @@ def safe_read():
     
     print(name)
     
-    with open('safe.txt','a') as safe_file:
-        safe_file.write( str(counter) + " s/ " + name + " \e")
+    with open('safe.txt','w') as safe_file:
+        safe_file.write( str(counter) + " s/" + name + "/e")
     
     if counter == 6:
         counter = 0
@@ -78,8 +79,8 @@ def open_file():
     global name
     global path
     global exe
-    print('cmd /k "D: && cd "'+ path + ' " && "' + exe + '".exe && exit"')
-    os.system('cmd /k "D: && cd "'+ path + ' " && "' + exe + '".exe && exit"')
+    print('cmd /k "D: && cd "'+ path +  " && " + exe + ".exe && exit")
+    os.system('cmd /k "D: && cd "'+ path +  '" && "' + exe + '".exe && exit"')
 
     
 
