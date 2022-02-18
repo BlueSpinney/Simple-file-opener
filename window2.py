@@ -19,7 +19,6 @@ setuprun = False
 def setup():
     global setuprun
     global name
-    print("hello")
     
     with open('safe.txt', 'r') as safe_file:
         name = safe_file.read()
