@@ -1,9 +1,7 @@
 
 # fileopener
 
-from dis import Instruction
 from tkinter import *
-import cv2 as cv
 import os
 import sys 
 
@@ -31,7 +29,6 @@ def setup():
     with open('safe.txt', 'w') as safe_file:
         safe_file.write("")
     
-    print("hi")
     print(name)                                                                                                                                                                                                                                                                     
     
     
@@ -48,7 +45,6 @@ def safe_read():
     global path
     global exe
     global setuprun
-    print(setuprun)
     
     if setuprun == False:
         name = enter.get()
@@ -66,7 +62,7 @@ def safe_read():
         with open('safe.txt','w') as safe_file:
             safe_file.write("")
     
-    b2.configure(text=name[0:name.find("filepath")])
+    b2.configure(text=name[name.find("s/") + 1:name.find("!filepath") - 1])
     
     if name.find("!filepath") > 0:
         path = name[name.find("!filepath")+ 10:name.find("!name")]
@@ -85,7 +81,7 @@ def open_file():
     
 
 
-header = Label(main,text="game quick axis")
+header = Label(main,text="quick axis")
 
 b2 = Button(main,text="",command=open_file)
 
@@ -97,9 +93,10 @@ b1 = Button(main,text="safe",command=safe_read)
 Instructiontxt = Label(main,text="name (name of button) \n !filepath (path to file)  \n !name (name of application)")
 
 
-b3.pack()
+
 header.pack()
 Instructiontxt.pack()
+b3.pack()
 b1.pack()
 b2.pack()
 enter.pack()

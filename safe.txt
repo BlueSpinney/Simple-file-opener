@@ -1,1 +1,1 @@
-1 s/ inc !filepath D:\steam\steamapps\common\Inscryption !name inscryption/e
+1 s/inscryption !filepath D:\steam\steamapps\common\Inscryption !name Inscryption/e
